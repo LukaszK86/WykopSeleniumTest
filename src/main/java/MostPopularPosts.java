@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.PageFactoryFinder;
 
 public class MostPopularPosts extends FunctionalTestSetup {
 
@@ -21,8 +22,10 @@ public class MostPopularPosts extends FunctionalTestSetup {
      ResultPage resultPage = PageFactory.initElements(driver, ResultPage.class);
      resultPage.clickTime6h();
 
+        SortPosts sortPosts = PageFactory.initElements(driver,SortPosts.class);
+        sortPosts.displayThreeMostPopularComments();
 
-
-
+        DisplayPosts displayPosts = PageFactory.initElements(driver, DisplayPosts.class);
+        displayPosts.DisplayAllPosts();
     }
 }
